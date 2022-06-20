@@ -1,0 +1,38 @@
+#page{
+    background-color: hsl(0, 0%, 100%);
+    font-family: 'League Spartan', sans-serif;
+    padding: 4em;
+    display: grid;
+    grid-template-rows: 500px 200px 100px;
+}
+.first-row{
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 10em 1fr;
+}
+#text{
+    width: 20em;
+    grid-column: 1;
+}
+#title{
+    font-weight: 700;
+    color: hsl(300, 43%, 22%);
+    text-align: left;
+    font-size: 40px;
+}
+#subtitle{
+    font-weight: 400;
+    color: hsl(303, 10%, 53%);
+    text-align: justify;
+}
+.stars{
+    grid-column: 3;
+}
+.reviews{
+    grid-row: 2;
+    display: flex;
+    flex-flow: row wrap;
+}
+.attribution{
+    grid-row: 3;
+}
