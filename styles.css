@@ -7,7 +7,7 @@
     background-color: hsl(0, 0%, 100%);
     font-family: 'League Spartan', sans-serif;
 }
-@media screen and (min-width: 375px) {
+@media only screen and (min-device-width: 480px) and (max-device-width: 800px) {
     #page{
     display: flex;
     width: 100wh;
@@ -68,7 +68,7 @@
         gap: 1.5em;
     }
 }
-@media screen and (min-width: 1440px) {
+@media  screen and (max-width: 1920px) {
     #page{
     display: grid;
     grid-template-areas: "title stars"
@@ -83,7 +83,7 @@
         justify-content: center;
         align-items: center;
         gap: 2em;
-        margin: 2% 2% 1% 5%;
+        margin: 20% 10% 5% 30%;
     }
     #title{
         text-align: left;
@@ -98,7 +98,7 @@
         align-items: flex-start;
         justify-content: center;
         gap:1em;
-        margin: 2% 5% 1% 2%;
+        margin: 20% 30% 5% 5%;
     
     }
     .stars{
@@ -106,7 +106,7 @@
         border-radius: 0.5em;
         font-size: 1.1em;
         font-weight: 700;
-        padding: 1.2em;
+        padding: 1.6em;
         width: auto;
         height: auto;
         color:hsl(300, 43%, 22%);
@@ -139,7 +139,7 @@
         background-color: hsl(300, 43%, 22%);
         border-radius: 0.5em;
         padding: 2em;
-        width: 30%;
+        width: 22%;
         display: flex;
         flex-direction: column;
         justify-content: center;
