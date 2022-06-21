@@ -1,108 +1,177 @@
 *{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 #page{
     background-color: hsl(0, 0%, 100%);
     font-family: 'League Spartan', sans-serif;
-    display: grid;
+}
+@media screen and (min-width: 375px) {
+    #page{
+    display: flex;
     width: 100wh;
     height: 100vh;
-    padding: 0em 20wh;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20%;
+    gap: 2em;
+    }
+    #text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        text-align: center;
+    }
+    #stars{
+    grid-area: stars;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1em;
+    }
+    .stars{
+        background-color: hsl(300, 24%, 96%);
+        border-radius: 0.5em;
+        font-size: 1.1em;
+        font-weight: 700;
+        padding: 1em;
+        color:hsl(300, 43%, 22%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        gap: 1em;
+        width: 100%;
+    
+    }
+    .stars>p{
+        text-align: center;
+    }
+    #reviews{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        gap: 2em;
+    }
+    .reviews{
+        background-color: hsl(300, 43%, 22%);
+        border-radius: 0.5em;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5em;
+    }
+}
+@media screen and (min-width: 1440px) {
+    #page{
+    display: grid;
     grid-template-areas: "title stars"
-                         "reviews  reviews"
-                         "foot  foot";
-    grid-template-rows: 2fr 1fr 1fr;
-    grid-template-columns: repeat(2,1fr);
+                         "reviews reviews";
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    }
+    #text{
+        grid-area: title;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        margin: 2% 2% 1% 5%;
+    }
+    #title{
+        text-align: left;
+    }
+    #subtitle{
+        text-align: justify;
+    }
+    #stars{
+        grid-area: stars;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap:1em;
+        margin: 2% 5% 1% 2%;
+    
+    }
+    .stars{
+        background-color: hsl(300, 24%, 96%);
+        border-radius: 0.5em;
+        font-size: 1.1em;
+        font-weight: 700;
+        padding: 1.2em;
+        width: auto;
+        height: auto;
+        color:hsl(300, 43%, 22%);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        gap: 1em;
+    
+    }
+    #star1{
+        align-self: flex-start;
+    }
+    #star2{
+        align-self: center;
+    }
+    #star3{
+        align-self: flex-end;
+    }
+    #reviews{
+        grid-area: reviews;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+    .reviews{
+        background-color: hsl(300, 43%, 22%);
+        border-radius: 0.5em;
+        padding: 2em;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5em;
+    }
+
 }
 
 /*Title Area*/
-#text{
-    grid-area: title;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    margin: 20% 5% 5% 40%;
-
-
-}
 #title{
     font-weight: 700;
     color: hsl(300, 43%, 22%);
-    text-align: left;
     font-size: 4.2em;
 }
 #subtitle{
     font-weight: 500;
     color: hsl(303, 10%, 53%);
-    text-align: justify;
     font-size: 1.2em;
 }
 
 /* Rates section*/
-#stars{
-    grid-area: stars;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap:1em;
-    margin: 20% 40% 5% 5%;
-
-}
-.stars{
-    background-color: hsl(300, 24%, 96%);
-    border-radius: 0.5em;
-    font-size: 1.1em;
-    font-weight: 700;
-    padding: 1em;
-    width: auto;
-    height: auto;
-    color:hsl(300, 43%, 22%);
+.fivestars{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content: center;
-    align-items: center;
-    gap: 1em;
-
 }
-.stars>img{
+.fivestars>img{
     width: 1em;
     height: 1em;
 }
-#star1{
-    align-self: flex-start;
-}
-#star2{
-    align-self: center;
-}
-#star3{
-    align-self: flex-end;
-}
-
 /*Reviews Section*/
-#reviews{
-    grid-area: reviews;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-}
-.reviews{
-    background-color: hsl(300, 43%, 22%);
-    border-radius: 0.5em;
-    padding: 1.8em;
-    width: 16%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1.5em;
-}
 .profile{
     display: flex;
     flex-direction: row;
@@ -138,13 +207,3 @@
 #review3{
     align-self: flex-end;
 }
-
-/*Footer section*/
-#foot{
-    grid-area: foot;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 2em;
-}
-
