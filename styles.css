@@ -1,38 +1,150 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
 #page{
     background-color: hsl(0, 0%, 100%);
     font-family: 'League Spartan', sans-serif;
-    padding: 4em;
     display: grid;
-    grid-template-rows: 500px 200px 100px;
+    width: 100wh;
+    height: 100vh;
+    padding: 0em 20wh;
+    grid-template-areas: "title stars"
+                         "reviews  reviews"
+                         "foot  foot";
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
 }
-.first-row{
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: 1fr 10em 1fr;
-}
+
+/*Title Area*/
 #text{
-    width: 20em;
-    grid-column: 1;
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 20% 5% 5% 40%;
+
+
 }
 #title{
     font-weight: 700;
     color: hsl(300, 43%, 22%);
     text-align: left;
-    font-size: 40px;
+    font-size: 4.2em;
 }
 #subtitle{
-    font-weight: 400;
+    font-weight: 500;
     color: hsl(303, 10%, 53%);
     text-align: justify;
+    font-size: 1.2em;
+}
+
+/* Rates section*/
+#stars{
+    grid-area: stars;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap:1em;
+    margin: 20% 40% 5% 5%;
+
 }
 .stars{
-    grid-column: 3;
+    background-color: hsl(300, 24%, 96%);
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 1em;
+    width: auto;
+    height: auto;
+    color:hsl(300, 43%, 22%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 1em;
+
 }
-.reviews{
-    grid-row: 2;
+.stars>img{
+    width: 1em;
+    height: 1em;
+}
+#star1{
+    align-self: flex-start;
+}
+#star2{
+    align-self: center;
+}
+#star3{
+    align-self: flex-end;
+}
+
+/*Reviews Section*/
+#reviews{
+    grid-area: reviews;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
 }
-.attribution{
-    grid-row: 3;
+.reviews{
+    background-color: hsl(300, 43%, 22%);
+    border-radius: 0.5em;
+    padding: 1.8em;
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5em;
 }
+.profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+.profile>img{
+    border-radius: 5em;
+    height: 3em;
+    width: 3em;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+}
+.data > p:first-of-type{
+    font-weight: 700;
+    color: hsl(300, 24%, 96%);
+}
+.data > p:last-of-type{
+    font-weight: 700;
+    color: hsl(333, 80%, 67%);
+}
+.reviews > p:last-of-type{
+    grid-area: opinion;
+    font-weight: 500;
+    color: hsl(300, 24%, 96%);
+}
+#review1{
+    align-self: flex-start;
+}
+#review3{
+    align-self: flex-end;
+}
+
+/*Footer section*/
+#foot{
+    grid-area: foot;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 2em;
+}
+
